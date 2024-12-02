@@ -1,0 +1,27 @@
+EXPLICACIÓN DEL CÓDIGO CAMBIO DE COLOR
+
+HTML:
+Tenemos un botón (<button>) que es un elemento interactivo. Este botón llama a la función de JavaScript changeColor()
+cada vez que el usuario hace clic en él, gracias al atributo onclick.
+
+JavaScript:
+Cuando hacemos clic en el botón, se ejecuta la función changeColor().
+Esta función es la encargada de cambiar el color de fondo de la página de manera dinámica.
+
+Dentro del código, se usa una variable color que comienza con el carácter #. 
+Este carácter es necesario porque los colores en formato hexadecimal siempre deben comenzar con # para ser válidos en CSS. Sin este prefijo, el navegador no reconoce el color.
+
+Generación de un color aleatorio:
+
+Se selecciona un carácter aleatorio de la cadena letters (0123456789ABCDEF) usando Math.random() y Math.floor().
+Math.random() genera un número decimal entre 0 y 1, y al multiplicarlo por 16, obtenemos un valor entre 0 y 15. 
+Este número se redondea hacia abajo con Math.floor() para seleccionar un índice válido de la cadena.
+El proceso se repite 6 veces dentro de un bucle for, para obtener un código hexadecimal completo de 6 caracteres (por ejemplo, #3A7FCD).
+Función getRandomColor():
+
+Esta función es la encargada de generar el color hexadecimal aleatorio.
+Combina los caracteres seleccionados aleatoriamente con el prefijo # y devuelve el resultado final.
+Función changeColor():
+
+Llama a getRandomColor() para obtener un color hexadecimal aleatorio.
+Cambia el color de fondo de la página asignando este color al estilo del elemento <body> con document.body.style.backgroundColor.
